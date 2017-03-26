@@ -8,14 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
-        this.name = 'Angular';
+        this.name = 'world';
+        this.count = 0;
     }
+    AppComponent.prototype.onClick = function () {
+        this.count++;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "<h1>Hello {{name}}</h1>",
+        template: "<h1>Hello {{name}}</h1>\n  <button (click)=\"onClick($event)\">{{count}}</button>"
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
